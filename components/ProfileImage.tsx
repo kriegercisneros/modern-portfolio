@@ -15,11 +15,9 @@ export default function ProfileImage() {
             className="object-cover w-full h-full"
             quality={85}
             priority
-            unoptimized
           />
         </div>
       </div>
     </div>
-    
   )
 }
