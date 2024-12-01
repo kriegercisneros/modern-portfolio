@@ -1,20 +1,14 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import ProfileImage from '@/components/ProfileImage'
 
 export default function Home() {
   return (
     <main className="min-h-screen relative">
       {/* Profile Image in upper right */}
       <div className="absolute top-8 right-8">
-        <div className="relative w-32 h-32 rounded-full overflow-hidden">
-          <Image
-            src="/images/your-image-name.jpg"  // Update this with your actual image name
-            alt="Profile Picture"
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority
-            className="object-cover"
-          />
+        <div className="w-32 h-32"> {/* Container to constrain ProfileImage size */}
+          <ProfileImage />
         </div>
       </div>
 
