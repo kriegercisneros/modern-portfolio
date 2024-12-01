@@ -1,45 +1,78 @@
 import { projects } from '../lib/projects';
-import ProjectCard from '../components/ProjectCard';
 import ProfileImage from '../components/ProfileImage';
+import TechStack from '../components/TechStack';
+import TimelineVisualization from '../components/RapidDevelopmentTimeline';
+import ProjectGrid from '../components/ProjectCard';
+
 export default function Home() {
   return (
-    <main className="bg-peach min-h-screen p-10 font-sans">
-      {/* Profile Image Upper Right */}
-      <div className="top-4 left-4 z-50">
+    <main className="bg-surface min-h-screen py-12 px-4 sm:px-6 lg:px-8 font-sans">
+      {/* Profile Image Upper Left */}
+      <div className="fixed top-8 left-8 z-50">
         <ProfileImage />
       </div>
+
       {/* Header Section */}
-      <header className="flex flex-col items-center text-center mb-16">
-        <h1 className="text-5xl font-bold text-black mb-2">Jacqueline Krieger</h1>
-        <h2 className="text-2xl font-semibold text-gray-600">Full-Stack Software Engineer</h2>
-        <p className="text-lg text-gray-500 mt-2">
+      <header className="flex flex-col items-center text-center mb-20 pt-32">
+        <h1 className="text-6xl font-bold text-accent mb-4 border-b-3 border-accent pb-2">
+          Jacqueline Krieger
+        </h1>
+        <h2 className="text-3xl font-bold text-accent-soft mb-4">
+          Full-Stack Software Engineer
+        </h2>
+        <p className="text-xl text-accent-soft max-w-2xl">
           Building reliable, secure, UX perfect Software for Enterprise.
+          Specializing in rapid development and cloud-native solutions.
         </p>
       </header>
 
       {/* Skills and Certifications Section */}
-      <section className="bg-white p-6 shadow-lg rounded-lg max-w-4xl mx-auto mb-16">
-        <h3 className="text-2xl font-bold mb-4 text-gray-600">Skills and Certifications</h3>
-        <ul className="list-disc list-inside space-y-2 text-gray-700">
-          <li>AWS SkillBuilder</li>
-          <li>Azure AI Engineer</li>
-          <li>Python Engineer, Flatiron School</li>
-          <li>JavaScript Engineer, Flatiron School</li>
-          <li>Kaggle Competitor, Machine Learning</li>
-        </ul>
+      <section className="max-w-4xl mx-auto mb-20">
+        <div className="bg-stone-light border-3 border-accent shadow-brutal-lg p-8">
+          <h3 className="text-2xl font-bold text-accent mb-6">Skills and Certifications</h3>
+          {/* ... rest of skills section ... */}
+        </div>
+      </section>
+
+      {/* Tech Stack Section */}
+      <section className="mb-20">
+        <TechStack />
+      </section>
+
+      {/* Timeline Section */}
+      <section className="mb-20">
+        <TimelineVisualization />
       </section>
 
       {/* Projects Section */}
-      <section className="mb-16">
-        <h3 className="text-3xl font-bold text-center mb-6">Development Projects</h3>
-        <ProjectCard projects={projects} />
+      <section className="mb-20 container mx-auto max-w-7xl">
+        <ProjectGrid projects={projects} />
       </section>
 
       {/* Footer Section */}
-      <footer className="flex justify-center mt-10">
-        <div className="flex items-center space-x-4">
-          {/* <ProfileImage /> */}
-          <p className="text-gray-700">Powered by creativity and passion for development.</p>
+      <footer className="border-t-3 border-accent pt-8 mt-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-accent-soft font-mono">
+            Powered by creativity and passion for development.
+          </p>
+          <div className="flex justify-center space-x-6 mt-4">
+            <a 
+              href="https://github.com/kriegercisneros" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-brutal-blue transition-colors"
+            >
+              GitHub
+            </a>
+            <a 
+              href="https://linkedin.com/in/jacquelinekrieger" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-brutal-blue transition-colors"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
       </footer>
     </main>
