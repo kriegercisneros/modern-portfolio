@@ -3,7 +3,7 @@ export default function Home() {
   return (
     <main className="bg-peach min-h-screen p-10 font-sans">
       {/* Profile Image Upper Right */}
-      <div className="fixed top-4 left-4 z-50">
+      <div className="top-4 left-4 z-50">
         <ProfileImage />
       </div>
       {/* Header Section */}
@@ -17,7 +17,7 @@ export default function Home() {
 
       {/* Skills and Certifications Section */}
       <section className="bg-white p-6 shadow-lg rounded-lg max-w-4xl mx-auto mb-16">
-        <h3 className="text-2xl font-bold mb-4">Skills and Certifications</h3>
+        <h3 className="text-2xl font-bold mb-4 text-gray-600">Skills and Certifications</h3>
         <ul className="list-disc list-inside space-y-2 text-gray-700">
           <li>AWS SkillBuilder</li>
           <li>Azure AI Engineer</li>
