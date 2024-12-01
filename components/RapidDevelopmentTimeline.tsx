@@ -58,22 +58,22 @@ const TimelineVisualization = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 max-w-5xl mx-auto mt-8">
-      <h2 className="text-2xl font-bold mb-8 text-center">
+    <div className="bg-stone-light border-3 border-accent shadow-brutal-lg p-8 max-w-5xl mx-auto">
+      <h2 className="text-3xl font-bold text-accent mb-8 text-center">
         Rapid Development Timeline
-        <span className="block text-sm font-normal text-gray-600 mt-2">
+        <span className="block text-sm font-mono text-accent-soft mt-2">
           From Concept to MVP in 10 Days
         </span>
       </h2>
 
       <div className="relative">
         {/* Timeline line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-blue-200 transform -translate-x-1/2" />
+        <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-accent transform -translate-x-1/2" />
 
         {phases.map((phase, index) => (
           <div 
             key={index}
-            className="relative mb-12"
+            className="relative mb-16 last:mb-0"
             onMouseEnter={() => setActivePhase(index)}
             onMouseLeave={() => setActivePhase(null)}
           >
@@ -83,31 +83,33 @@ const TimelineVisualization = () => {
             `}>
               {/* Timeline node */}
               <div className="absolute left-1/2 transform -translate-x-1/2">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-brutal-blue border-2 border-accent rounded-full flex items-center justify-center shadow-brutal">
                   {phase.icon && <div className="text-white">{phase.icon}</div>}
                 </div>
               </div>
 
               {/* Content */}
               <div className={`w-5/12 ${index % 2 === 0 ? 'pr-16' : 'pl-16'}`}>
-                <div className={`bg-gray-50 p-4 rounded-lg ${
-                  activePhase === index ? 'ring-2 ring-blue-500' : ''
-                }`}>
+                <div className={`
+                  bg-surface border-2 border-accent p-4
+                  ${activePhase === index ? 'shadow-brutal' : ''}
+                  transition-all duration-300
+                `}>
                   <div className="flex items-center gap-2 mb-2">
-                    <Clock className="w-4 h-4 text-blue-500" />
-                    <span className="text-sm text-blue-500 font-medium">
+                    <Clock className="w-4 h-4 text-brutal-blue" />
+                    <span className="text-sm font-mono text-accent-soft">
                       {phase.duration}
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{phase.title}</h3>
+                  <h3 className="text-lg font-bold text-accent mb-2">{phase.title}</h3>
                   
                   {activePhase === index && (
                     <>
                       <div className="space-y-2 mb-4">
                         {phase.details.map((detail, i) => (
                           <div key={i} className="flex items-center gap-2">
-                            <Zap className="w-4 h-4 text-yellow-500" />
-                            <span className="text-sm">{detail}</span>
+                            <Zap className="w-4 h-4 text-brutal-yellow" />
+                            <span className="text-sm text-accent-soft">{detail}</span>
                           </div>
                         ))}
                       </div>
@@ -115,9 +117,9 @@ const TimelineVisualization = () => {
                         {phase.tools.map((tool, i) => (
                           <span 
                             key={i}
-                            className="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs"
+                            className="inline-flex items-center gap-1 px-2 py-1 bg-stone-light border border-accent text-xs font-mono"
                           >
-                            <Star className="w-3 h-3" />
+                            <Star className="w-3 h-3 text-brutal-blue" />
                             {tool}
                           </span>
                         ))}
@@ -129,10 +131,6 @@ const TimelineVisualization = () => {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="text-center text-gray-600 mt-8">
-        Hover over each phase to see detailed activities and tools used
       </div>
     </div>
   );
