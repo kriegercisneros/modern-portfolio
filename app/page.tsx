@@ -1,3 +1,5 @@
+import { projects } from '../lib/projects';
+import ProjectCard from '../components/ProjectCard';
 import ProfileImage from '../components/ProfileImage';
 export default function Home() {
   return (
@@ -30,20 +32,7 @@ export default function Home() {
       {/* Projects Section */}
       <section className="mb-16">
         <h3 className="text-3xl font-bold text-center mb-6">Development Projects</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Project Video Placeholders */}
-          {[1, 2, 3].map((project, index) => (
-            <div key={index} className="bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-              {/* <video
-                className="w-full"
-                controls
-                src=""
-                poster="/placeholder.png"
-                alt="Project Thumbnail"
-              /> */}
-            </div>
-          ))}
-        </div>
+        <ProjectCard projects={projects} />
       </section>
 
       {/* Footer Section */}
