@@ -25,3 +25,36 @@ body {
   )
   rgb(var(--background-start-rgb));
 }
+
+/* globals.css */
+html {
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fce5cd; /* Light peach color for background */
+}
+
+.bg-peach {
+  background-color: #fce5cd;
+}
+
+.text-gray-500 {
+  color: #6c757d;
+}
+
+.text-gray-600 {
+  color: #495057;
+}
+
+.text-gray-700 {
+  color: #343a40;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+

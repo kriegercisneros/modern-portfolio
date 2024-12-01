@@ -1,47 +1,58 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
+import ProfileImage from '../components/ProfileImage';
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <h1 className="text-4xl font-bold">John Doe</h1>
-        </div>
+    <main className="bg-peach min-h-screen p-10 font-sans">
+      {/* Profile Image Upper Right */}
+      <div className="fixed top-4 left-4 z-50">
+        <ProfileImage />
       </div>
+      {/* Header Section */}
+      <header className="flex flex-col items-center text-center mb-16">
+        <h1 className="text-5xl font-bold text-black mb-2">Jacqueline Krieger</h1>
+        <h2 className="text-2xl font-semibold text-gray-600">Full-Stack Software Engineer</h2>
+        <p className="text-lg text-gray-500 mt-2">
+          Building reliable, secure, UX perfect Software for Enterprise.
+        </p>
+      </header>
 
-      <div className="relative flex place-items-center">
-        <h2 className="text-2xl">Full Stack Developer</h2>
-      </div>
+      {/* Skills and Certifications Section */}
+      <section className="bg-white p-6 shadow-lg rounded-lg max-w-4xl mx-auto mb-16">
+        <h3 className="text-2xl font-bold mb-4">Skills and Certifications</h3>
+        <ul className="list-disc list-inside space-y-2 text-gray-700">
+          <li>AWS SkillBuilder</li>
+          <li>Azure AI Engineer</li>
+          <li>Python Engineer, Flatiron School</li>
+          <li>JavaScript Engineer, Flatiron School</li>
+          <li>Kaggle Competitor, Machine Learning</li>
+        </ul>
+      </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-3 lg:text-left">
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
-          <h2 className="mb-3 text-2xl font-semibold">
-            Projects
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Check out my latest work and side projects.
-          </p>
+      {/* Projects Section */}
+      <section className="mb-16">
+        <h3 className="text-3xl font-bold text-center mb-6">Development Projects</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Project Video Placeholders */}
+          {[1, 2, 3].map((project, index) => (
+            <div key={index} className="bg-gray-100 rounded-lg shadow-lg overflow-hidden">
+              {/* <video
+                className="w-full"
+                controls
+                src=""
+                poster="/placeholder.png"
+                alt="Project Thumbnail"
+              /> */}
+            </div>
+          ))}
         </div>
+      </section>
 
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
-          <h2 className="mb-3 text-2xl font-semibold">
-            About Me
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn more about my journey and skills.
-          </p>
+      {/* Footer Section */}
+      <footer className="flex justify-center mt-10">
+        <div className="flex items-center space-x-4">
+          {/* <ProfileImage /> */}
+          <p className="text-gray-700">Powered by creativity and passion for development.</p>
         </div>
-
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
-          <h2 className="mb-3 text-2xl font-semibold">
-            Contact
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Get in touch for opportunities or collaboration.
-          </p>
-        </div>
-      </div>
+      </footer>
     </main>
-  )
+  );
 }
